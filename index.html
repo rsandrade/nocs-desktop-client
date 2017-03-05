@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <title>Nocs - Desktop Client</title>
+
+    <link rel="stylesheet" href="template/css/layout.css" media="screen">
+    <link rel="stylesheet" href="template/dijit/themes/claro/claro.css" media="screen">
+    <link rel="stylesheet" href="template/dojox/grid/resources/claroGrid.css" />
+
+    <script type="text/javascript" src="lib/js/sql.js"></script>   
+    
+  </head>
+  <body class="claro">
+
+    <div id="appLayout" class="nocsLayout"
+      data-dojo-type="dijit/layout/BorderContainer"
+      data-dojo-props="design: 'headline'">
+      
+      <div class="centerPanel" 
+        data-dojo-type="dijit/layout/TabContainer"
+        data-dojo-props="region: 'center', tabPosition: 'bottom'">
+        
+          <div            
+            data-dojo-type="dijit/layout/ContentPane"
+            data-dojo-props="title: 'Documentação'">
+            
+              <h4>Documentação</h4>
+              <div id="documentacaoGrid">Datagrid aqui</div>
+          </div>
+          
+          <div
+            data-dojo-type="dijit/layout/ContentPane"
+            data-dojo-props="title: 'Usuários e Grupos'">
+            
+              <h4>Usuários e Grupos</h4>
+          </div>
+          
+          <div
+            data-dojo-type="dijit/layout/ContentPane"
+            data-dojo-props="title: 'Privilégios de Acesso'">
+            
+              <h4>Privilégios de Acesso</h4>
+          </div>
+      </div>
+
+      <div class="edgePanel" 
+        data-dojo-type="dijit/layout/ContentPane"
+        data-dojo-props="region: 'top'">
+        
+        <b>Nocs - Desktop Client</b>
+      </div>
+      
+      <div id="leftCol" class="edgePanel"
+        data-dojo-type="dijit/layout/ContentPane"
+        data-dojo-props="region: 'left', splitter: true">
+        
+        dijit.Tree
+      </div>
+    </div>
+  
+    <script src="template/dojo/dojo.js"></script>
+    <script>
+      require([
+        "dojo/parser", 
+        "dojo/_base/window", "dojo/store/Memory",
+        "dijit/tree/ObjectStoreModel", "dijit/Tree",
+        "dijit/layout/BorderContainer", 
+        "dijit/layout/TabContainer",
+        "dijit/layout/ContentPane",
+        "dojo/domReady!"
+      ], function(parser, win, Memory, ObjectStoreModel, Tree){
+        parser.parse();
+      });
+    </script>
+    <script src="javascript.js"></script>
+  </body>
+</html>

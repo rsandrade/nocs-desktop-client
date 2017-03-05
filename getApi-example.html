@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <title>Nocs - Desktop Client</title>
+  </head>
+  <body>
+
+<button id="json">Pegar dados</button>
+<div></div>
+<script type="text/javascript">
+    $('#json').click(function(){ 
+      $.getJSON("https://example.com/api/Users/1", function(result){
+          $.each(result, function(i, field){
+              $("div").append(field + " ");
+          });
+      });  
+    });
+
+</script>
+
+  
+  </body>
+</html>
